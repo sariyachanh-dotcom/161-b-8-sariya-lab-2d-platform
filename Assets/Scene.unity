@@ -442,8 +442,7 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 5099268, guid: 3eeab7ca4bdca4ba382826bdc99b4911, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -946,6 +945,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7a7e5e62c4e8cf4f9fff62411122dd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  atkRange: 0
 --- !u!4 &620366148 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 407626, guid: efff92728486e44de9714de91b3abbd2, type: 3}
@@ -2885,7 +2885,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocity: {x: 0, y: 0}
-  MovePoint:
+  movePoints:
   - {fileID: 1543189721}
   - {fileID: 806612270}
 --- !u!4 &1423506852 stripped
