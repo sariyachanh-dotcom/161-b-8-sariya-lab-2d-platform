@@ -13,7 +13,7 @@ public class Crocodile : Enemy , IShootable
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        base.Initialized(50);
+        base.Initialized(150);
         DamageHit = 30;
         //set atk range and target
         atkRange = 6.0f;

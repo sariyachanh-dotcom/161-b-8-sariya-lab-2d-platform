@@ -11,7 +11,7 @@ public class Ant : Enemy
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        base.Initialized(20);
+        base.Initialized(100);
         DamageHit = 20;
 
         velocity = new Vector2(-1.0f, 0.0f);
@@ -20,12 +20,12 @@ public class Ant : Enemy
     {
         //move from current position
         rb.MovePosition(rb.position + velocity * Time.fixedDeltaTime);
-        //move left และเกินขอบซ้าย
+       
         if (velocity.x < 0 && rb.position.x <= movePoints[0].position.x)
         {
             Flip();
         }
-        //move right และเกินขอบขวา
+        
         if (velocity.x > 0 && rb.position.x >= movePoints[1].position.x)
         {
             Flip();

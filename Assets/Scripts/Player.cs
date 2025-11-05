@@ -15,14 +15,30 @@ public class Player : Character, IShootable
         ReloadTime = 1.0f;
         WaitTime = 0.0f;
     }
-    public void OnHitWith(Enemy enemy)
-    {
-        TakeDamage(enemy.DamageHit);
-    }
 
     private void FixedUpdate()
     {
         WaitTime += Time.fixedDeltaTime;
+    }
+    void Update()
+    {
+        Shoot();
+    }
+    public void Shoot()
+    {
+        if (Input.GetMouseButtonDown(0) && WaitTime >= ReloadTime)
+        {
+            var bullet = Instantiate(Bullet, ShootPoint.position, Quaternion.identity);
+            Banana banana = bullet.GetComponent<Banana>();
+            if (banana != null)
+                banana.InitWeapon(20, this);
+            WaitTime = 0.0f;
+        }
+
+    }
+    public void OnHitWith(Enemy enemy)
+    {
+        TakeDamage(enemy.DamageHit);
     }
 
     private void OnCollisionEnter2D(Collision2D other)
@@ -34,24 +50,8 @@ public class Player : Character, IShootable
             Debug.Log($"{this.name} collides with {enemy.name}");
         }
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        Shoot();
-    }
-
-    public void Shoot()
-    {
-        if(Input.GetMouseButtonDown(0) && WaitTime >= ReloadTime)
-        {
-            var bullet = Instantiate(Bullet,ShootPoint.position,Quaternion.identity);
-            Banana banana = bullet.GetComponent<Banana>();
-            if (banana != null)
-                banana.InitWeapon (20, this);
-            WaitTime = 0.0f;
-        }
-
-    }
     
+    // Update is called once per frame
+    
+
 }
