@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Rock : Weapon
 {
@@ -8,12 +8,14 @@ public class Rock : Weapon
     {
         rb.AddForce(force);
     }
+   
     public override void OnHitWith(Character obj)
     {
         if (obj is Player)
             obj.TakeDamage(this.damage);
 
     }
+   
     private void Start()
     {
         damage = 40;

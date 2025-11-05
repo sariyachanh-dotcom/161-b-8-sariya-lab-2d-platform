@@ -37,6 +37,7 @@ public class Crocodile : Enemy , IShootable
             Shoot();
         }
     }
+
     public void Shoot()
     {
         if (WaitTime >= ReloadTime)
